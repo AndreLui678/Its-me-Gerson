@@ -1,0 +1,189 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(./image/bricks.png);
+    background-color: #271c15;
+    background-size: 200px;
+}
+
+.container {
+    position: relative;
+    border: 5px solid black;
+    width: 80%;
+    height: 700px;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgb(0, 132, 255) 60%, rgb(0, 204, 255) 100%);
+    transition: filter 0.5s ease;
+}
+
+.moneyContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 50px;
+    margin: 10px;
+    gap: 10px;
+}
+
+.moneyContainer img {
+    height: 50px;
+}
+
+#numberMoneys {
+    color: #271c15;
+    font-size: 25px;
+    font-family: "Press Start 2P", system-ui;
+}
+
+.terra {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    bottom: 0;
+    background-color: #157c00;
+}
+
+#gerson {
+    position: absolute;
+    bottom: 20px;
+    left: 70px;
+    width: 100px;
+    height: 140px;
+    border-radius: 100%;
+}
+
+
+#gerson.animation {
+    animation: pular 0.6s ease-in-out;
+}
+
+#character {
+    position: absolute;
+    left: -50px;
+    bottom: -10px;
+    width: 200px auto;
+    height: 160px;
+    z-index: 1;
+}
+
+#pipe {
+    position: absolute;
+    bottom: 10px;
+    width: 80px;
+    animation: pipeAnimation 2s infinite linear;
+}
+
+#clouds {
+    position: absolute;
+    width: 900px;
+    animation: cloudsAnimation 8s infinite linear;
+    bottom: 30%;
+}
+
+.money {
+    position: absolute;
+    height: 50px;
+    animation: moneda 5s infinite linear;
+    display: flex;
+    flex-direction: row;
+}
+
+@keyframes pipeAnimation {
+    from {
+        right: -30%;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes cloudsAnimation {
+    from {
+        right: -70%;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+
+@keyframes pular {
+    0% {
+        bottom: 20px;
+    }
+
+    50% {
+        bottom: 40%;
+    }
+
+    100% {
+        bottom: 10px;
+    }
+}
+
+@keyframes moneda {
+    from {
+        right: -20%;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+#btn {
+    display: none;
+    position: absolute;
+    margin: 20px;
+    border: none;
+    background-color: transparent;
+}
+
+#btn span {
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Press Start 2P", system-ui;
+    text-align: center;
+    text-decoration: none;
+    background-color: #ff2b2b;
+    display: block;
+    position: relative;
+    padding: 30px 50px;
+    text-shadow: 0px 1px 0px #000;
+    box-shadow: inset 0 1px 0 #FFE5C4, 0 10px 0 #910000;
+    border-radius: 10px;
+}
+
+#btn span:hover {
+    cursor: pointer;
+}
+
+#btn span:active {
+    top: 10px;
+    background-color: #f70000;
+    box-shadow: inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #910000;
+}
+
+#btn:before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    padding: 4px;
+    position: absolute;
+    bottom: -15px;
+    left: -4px;
+    background-color: #2b0e00;
+    border-radius: 10px;
+}
